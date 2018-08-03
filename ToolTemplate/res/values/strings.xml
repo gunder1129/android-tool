@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">常用工具集</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_exit">退出</string>
+    <string name="btn_delete_file">删除文件</string>
+    <string name="text_delete_part">要删除的分区：</string>
+    <string name="text_delete_file">要删除的文件：</string>
+    <string name="please_check">请检测%1$s</string>
+    <string name="delete_success">删除%1$s完成</string>
+    <string name="delete_fail">删除%1$s失败</string>
+    <string name="delete_running">正在删除%1$s</string>
+    <string-array name="res_menu">
+        <item>删除文件</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>

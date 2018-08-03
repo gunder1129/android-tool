@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView 
+        android:id="@+id/tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"/>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_delete_part"/>
+        <EditText 
+            android:id="@+id/part"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="/data/"
+            android:textCursorDrawable="@drawable/my_cursor"/>
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="@string/text_delete_file"/>
+        <EditText 
+            android:id="@+id/file"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:hint="app"
+            android:textCursorDrawable="@drawable/my_cursor"/>
+    </LinearLayout>
+    <Button 
+        android:id="@+id/delete_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/btn_delete_file"/>
+
+</LinearLayout>

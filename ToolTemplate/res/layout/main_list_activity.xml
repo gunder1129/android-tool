@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_list_background"
+     >
+    <!-- 菜单栏 -->
+    <ListView 
+        android:id="@+id/menu"
+        android:layout_width="@dimen/menu_width"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:listSelector="@android:color/transparent"
+        android:divider="@drawable/icon_list_divider"
+        />
+
+    <!-- 内容区域 -->
+    <FrameLayout 
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="@dimen/menu_width"
+        android:padding="@dimen/content_padding"/>	
+    
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:onClick="onExit"
+        android:text="@string/app_exit"/>
+
+</FrameLayout>
