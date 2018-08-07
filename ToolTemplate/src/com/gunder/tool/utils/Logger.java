@@ -5,7 +5,7 @@ import java.util.Locale;
 import android.util.Log;
 
 /**
- * 通过StackTraceElement类获取打印信息
+ * 
  * Created by Administrator on 2018-3-29.
  * 
  */
@@ -44,6 +44,4 @@ public class Logger {
         String format = "%s_%s(L:%d)";
         return String.format(Locale.CANADA, format, className, methodName, methodLine);
     }
-
-
 }

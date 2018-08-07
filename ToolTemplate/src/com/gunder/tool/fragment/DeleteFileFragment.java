@@ -61,6 +61,11 @@ public class DeleteFileFragment extends Fragment implements OnClickListener{
 		// TODO Auto-generated method stub
 		super.onDetach();
 	}
+	/**
+	 * 删除某个目录
+	 * @param path 要删除的目录路径
+	 * @return
+	 */
 	private boolean deleteDirs(String path){
 		Logger.d("path = " + path);
 		File file = new File(path);
@@ -98,6 +103,11 @@ public class DeleteFileFragment extends Fragment implements OnClickListener{
 		}
 	}
 	
+	/**
+	 * 通过异步的方式来执行删除操作
+	 * @author ytkj
+	 *
+	 */
 	private class DeleteFileTask extends AsyncTask<String, String, String>{
 		
 		@Override
@@ -120,7 +130,7 @@ public class DeleteFileFragment extends Fragment implements OnClickListener{
 				Logger.d("part = " + part);
 				return mContext.getResources().getString(R.string.please_check, part);
 			}
-			
+			//返回要删除的目录列表
 			File[] childFiles = part.listFiles(new FileFilter() {
 				
 				@Override

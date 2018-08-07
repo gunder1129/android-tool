@@ -21,6 +21,7 @@ public class ListFragmentActivity extends FragmentActivity implements CallBack{
 	private ListView mListView = null;
 	private MenuItemsAdapter mAdapter = null;
 	private static final String DELETE_FILE = "删除文件";
+	private static final String DELETE_LOG = "删除日志";
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
@@ -84,6 +85,9 @@ public class ListFragmentActivity extends FragmentActivity implements CallBack{
 		if (DELETE_FILE.equals(title)){
 			Logger.d();
 			return new DeleteFileFragment();
+		}else if (DELETE_LOG.equals(title)){
+			Logger.d();
+			return new BackupLogsFragment();
 		}
 		return null;
 	}

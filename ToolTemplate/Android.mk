@@ -7,4 +7,4 @@ LOCAL_STATIC_JAVA_LIBRARIES :=  android-support-v4
 LOCAL_PACKAGE_NAME := Tooltemplate
 LOCAL_CERTIFICATE :=platform
 include $(BUILD_PACKAGE)
-
+include $(call all-makefiles-under,$(LOCAL_PATH))

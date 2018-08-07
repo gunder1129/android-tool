@@ -12,9 +12,10 @@
     <string name="delete_success">删除%1$s完成</string>
     <string name="delete_fail">删除%1$s失败</string>
     <string name="delete_running">正在删除%1$s</string>
+    <string name="delete_log">删除日志</string>
     <string-array name="res_menu">
         <item>删除文件</item>
-        <item>2</item>
+        <item>删除日志</item>
         <item>3</item>
         <item>4</item>
     </string-array>
