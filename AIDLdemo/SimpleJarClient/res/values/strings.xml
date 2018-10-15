@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HelloWorld</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="insert_db">插入数据</string>
+    <string name="private_insert_db">私有数据插入</string>
+    <string name="private_update_db">私有数据更新</string>
+    <string name="update_db">更新数据</string>
+    <string name="query_db">查询数据</string>
+    <string name="delete_db">删除数据</string>
+    <string name="back_db">返回</string>
+    <string name="insert_success">插入成功!</string>
+	<string name="update_success">更新成功!</string>
+	<string name="query_success">查询成功!</string>
+	<string name="delete_success">删除成功!</string>
+	<string name="write_success">写入成功!</string>
+	<string name="tts_init">Init</string>
+	<string name="tts_start">开始播报</string>
+	<string name="tts_pause">Pause</string>
+	<string name="tts_resume">Resume</string>
+	<string name="tts_stop">Stop</string>
+	<string name="tts_finish">退出</string>
+	
+	<string name="version_check">检测app应用版本号</string>
+	<string name="version_start">启动</string>
+	<string name="version_stop">暂停</string>
+	<string name="version_quit">退出</string>
+	
+	<string name="music_str">music</string>
+    <string name="music_title">title</string>
+    <string name="music_artist">artist</string>
+    <string name="music_album">album</string>
+    <string name="music_id">_id</string>
+    <string name="music_path">path</string>
+    <string name="result_success">success</string>
+    <string name="reply_word_toggleaction">好的，马上为您%1$s %2$s</string>
+    <string name="reply_word_pass_mission">%1$s已%2$s</string>
+</resources>

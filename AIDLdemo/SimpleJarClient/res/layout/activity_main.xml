@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.helloworld.MainActivity" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_world" />
+    <Button 
+        android:id="@+id/insertDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/insert_db"
+        android:textSize="25sp"
+        />
+    <Button 
+        android:id="@+id/updateDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_db"
+        android:textSize="25sp"
+        />
+    <Button 
+        android:id="@+id/queryDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/query_db"
+        android:textSize="25sp"
+        />
+    <Button 
+        android:id="@+id/deleteDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_db"
+        android:textSize="25sp"
+        />
+    <Button 
+        android:id="@+id/childInsertDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/private_insert_db"
+        android:textSize="25sp"
+        />
+    <Button 
+        android:id="@+id/writeDB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/private_insert_db"
+        android:textSize="25sp"
+        />
+    
+    <Button 
+        android:id="@+id/updateDB_xml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/private_update_db"
+        android:textSize="25sp"
+        />
+    
+    <Button 
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_db"
+        android:textSize="25sp"
+        />
+
+</LinearLayout>
