@@ -31,6 +31,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- <service
+            android:name="com.iflytek.platformservice.PlatformService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.iflytek.platformservice.PlatformService" />
+            </intent-filter>
+        </service> -->
     </application>
 
 </manifest>

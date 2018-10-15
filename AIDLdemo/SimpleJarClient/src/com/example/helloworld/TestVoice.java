@@ -17,7 +17,7 @@ public class TestVoice extends Activity{
 		setContentView(R.layout.version);
 		voiceManager = VoiceManager.getInstance();
 		if (voiceManager != null){
-			voiceManager.addVoiceChangedListener(new VoiceChangedListener() {
+			voiceManager.addVoiceChangedListener(new VoiceChangedListener() {//客户端的监听及实现
 				
 				@Override
 				public void openAppByVoice(String arg0) {
