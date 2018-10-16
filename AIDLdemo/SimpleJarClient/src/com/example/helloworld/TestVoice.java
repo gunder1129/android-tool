@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -30,6 +31,10 @@ public class TestVoice extends Activity{
 	
 	public void startVoice(View view){
 		Logger.d();
+		Intent intent = new Intent();
+		intent.setClass(TestVoice.this, UsbTest.class);
+		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		startActivity(intent);
     }
     
     public void stopVoice(View view){

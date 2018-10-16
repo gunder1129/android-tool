@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/show_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"/>
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="startVoice"
+        android:text="@string/usb_check"/>
+  
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="finishVoice"
+        android:text="@string/version_quit"/>
+
+</LinearLayout>

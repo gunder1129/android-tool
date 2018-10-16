@@ -28,6 +28,8 @@
 	<string name="version_stop">暂停</string>
 	<string name="version_quit">退出</string>
 	
+	<string name="usb_check">检测USB是否存在</string>
+	
 	<string name="music_str">music</string>
     <string name="music_title">title</string>
     <string name="music_artist">artist</string>
