@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.china.jar.StudentInfo;
 import com.china.jar.VoiceChangedListener;
 import com.china.jar.VoiceManager;
 import com.example.helloworld.util.Logger;
@@ -27,6 +28,8 @@ public class TestVoice extends Activity{
 				}
 			});
 		}
+		
+		voiceManager.registerUser(new StudentInfo("赵敏", 18));
 	}
 	
 	public void startVoice(View view){

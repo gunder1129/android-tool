@@ -7,7 +7,7 @@ LOCAL_SRC_FILES += \
 	src/com/china/jar/IVoiceCallBackInterface.aidl 
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := SimpleJar
+LOCAL_MODULE := simple
 LOCAL_CERTIFICATE := platform
 #include $(BUILD_JAVA_LIBRARY)
 include $(BUILD_STATIC_JAVA_LIBRARY)

@@ -8,6 +8,7 @@ public class SimpleControl {
 		changedListener = voiceChangedListener;
 	}
 	
+	//获取初始化后的回调实例
 	public static VoiceChangedListener getVoiceCallBack(){
 		return changedListener;
 	}

@@ -2,7 +2,6 @@ package com.china.jar;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -37,6 +36,7 @@ public class VoiceManager {
 		return mVoiceManager;
 	}
 	
+	//该构造函数主要调用getService()方法，以便客户端在调用VoiceManager.getInstance()方法时可以跟服务端建立链接
 	private VoiceManager(){ 
 		Log.d(TAG, "VoiceManager...begin");
 		mWorkThread = new HandlerThread("simple_manager");
@@ -97,6 +97,22 @@ public class VoiceManager {
 		}
 	}
 	
+	//注册用户
+	public void registerUser(StudentInfo studentInfo){
+		Log.d(TAG, "registerUser");
+		mService = getService();
+		if (null == mService){
+			Log.e(TAG, "registerUser mService is null!");
+			return ;
+		}
+		try{
+			mService.registerUser(studentInfo);
+		}catch(RemoteException e){
+			e.printStackTrace();
+		}
+	}
+	
+	//注册监听
 	public void addVoiceChangedListener(final VoiceChangedListener aListener){
 		if (DEBUG_DATA){
 			Log.v(TAG, "addVoiceChangedListener..." + aListener + " ,before list size = " + listeners.size());
@@ -110,6 +126,7 @@ public class VoiceManager {
 		}
 	}
 	
+	//注销监听
 	public void removeVoiceChangedListener(final VoiceChangedListener aListener){
 		if (DEBUG_DATA){
 			Log.v(TAG, "removeVoiceChangedListener..." + aListener + " ,before list size = " + listeners.size());
@@ -123,6 +140,7 @@ public class VoiceManager {
 		}
 	}
 	
+	//回调接口实现
 	private static final class CallBack extends IVoiceCallBackInterface.Stub{
 		
 		private Handler mHandler = null;
@@ -148,9 +166,7 @@ public class VoiceManager {
 					
 				}
 			});
-			
 		}
-		
 	}
 	
 }

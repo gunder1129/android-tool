@@ -2,6 +2,7 @@ package com.china.service;
 
 import com.china.jar.IVoiceCallBackInterface;
 import com.china.jar.IVoiceClientInterface;
+import com.china.jar.StudentInfo;
 import com.china.jar.VoiceChangedListener;
 import com.china.jar.VoiceManager;
 
@@ -51,7 +52,8 @@ public class SimpleService extends Service{
 		public void face() throws RemoteException {
 			Logger.d("face----excute!");//客户端调用face方法时这里会执行，会打印face----excute!
 		}
-
+		
+		//注册回调
 		@Override
 		public void registerCallBack(IVoiceCallBackInterface arg0)
 				throws RemoteException {
@@ -60,6 +62,7 @@ public class SimpleService extends Service{
 			
 		}
 
+		//注销回调
 		@Override
 		public void unRegisterCallBack(IVoiceCallBackInterface arg0)
 				throws RemoteException {
@@ -67,6 +70,7 @@ public class SimpleService extends Service{
 			mRemoteCallbackList.unregister(arg0);
 		}
 		
+		//调用回调方法
 		private VoiceChangedListener voiceChangedListener = new VoiceChangedListener() {
 		
 			@Override
@@ -83,6 +87,12 @@ public class SimpleService extends Service{
 				mRemoteCallbackList.finishBroadcast();
 			}
 		};
+
+		@Override
+		public void registerUser(StudentInfo studentInfo) throws RemoteException {
+			Logger.d("name = " + studentInfo.getName() + " ,age = " + studentInfo.getAge());
+			
+		}
 	}
 	//初始化服务，主要是向系统注册服务
 	private void initService(){
@@ -100,6 +110,4 @@ public class SimpleService extends Service{
 			}
 		}
 	}
-	
-	
 }
