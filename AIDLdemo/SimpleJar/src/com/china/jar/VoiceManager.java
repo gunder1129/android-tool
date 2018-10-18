@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.IBinder.DeathRecipient;
 import android.os.Looper;
 import android.os.Message;
 import android.os.RemoteException;
@@ -68,6 +69,7 @@ public class VoiceManager {
 				try {
 					mCallBack = new CallBack(listeners);
 					mService.registerCallBack(mCallBack);
+					mService.asBinder().linkToDeath(new AidlLinkToDeath(), 0);
 				} catch (Exception e) {
 					e.printStackTrace();
 					mService = null;
@@ -81,6 +83,19 @@ public class VoiceManager {
 			mWorkHander.sendEmptyMessageDelayed(MSG_INIT_SERVICE, 100);
 		}
 		return mService;
+	}
+	
+	/**
+	 * 监控aidl连接异常，即binder异常
+	 */
+	private class AidlLinkToDeath implements DeathRecipient{
+
+		@Override
+		public void binderDied() {
+			Log.e(TAG, "binderDied, aidl connect exception.");
+			mService = null;
+			mWorkHander.sendEmptyMessage(MSG_INIT_SERVICE);
+		}
 	}
 	
 	public void face(){
