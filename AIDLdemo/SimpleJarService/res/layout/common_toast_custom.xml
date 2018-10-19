@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogAera"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/common_toast_bg"
+    android:clickable="true"
+    android:gravity="center"
+    android:minHeight="285.0px"
+    android:minWidth="871.0px"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textViewToastMsg"
+        style="@style/shadowStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/common_text_dark"
+        android:textSize="28sp" />
+
+</LinearLayout>

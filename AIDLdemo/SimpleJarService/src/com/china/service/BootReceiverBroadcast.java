@@ -8,12 +8,13 @@ public class BootReceiverBroadcast extends BroadcastReceiver{
     @Override
     public void onReceive(Context context, Intent intent) {
         Logger.d();
-        Intent service = new Intent(context, SimpleService.class);//¿ª»úÆô¶¯»áÀ­Æğ·şÎñSimpleService
+        Intent service = new Intent(context, SimpleService.class);//å¼€æœºå¯åŠ¨ä¼šæ‹‰èµ·æœåŠ¡SimpleService
         context.startService(service);
         if(intent.getAction().equals("android.intent.gunder.SimpleJar")){
-        	//android.intent.gunder.SimpleJarÊôÓÚ×Ô¶¨Òåaction
+        	//android.intent.gunder.SimpleJarå±äºè‡ªå®šä¹‰action
         	Logger.d(intent.getAction());
-        	SimpleControl.getVoiceCallBack().openAppByVoice("nihao");//ÕâÀïÄ£Äâµ÷ÓÃpenAppByVoice·½·¨
+        	SimpleControl.getVoiceCallBack().openAppByVoice("nihao");//è¿™é‡Œæ¨¡æ‹Ÿè°ƒç”¨penAppByVoiceæ–¹æ³•
+        	SimpleControl.showToast("ä½ å¥½ï¼Œæˆ‘æ˜¯Serviceé‡Œé¢çš„Toastï¼");
         }
     }
 }

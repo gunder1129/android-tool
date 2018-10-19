@@ -1,11 +1,5 @@
 package com.china.service;
 
-import com.china.jar.IVoiceCallBackInterface;
-import com.china.jar.IVoiceClientInterface;
-import com.china.jar.StudentInfo;
-import com.china.jar.VoiceChangedListener;
-import com.china.jar.VoiceManager;
-
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
@@ -13,12 +7,18 @@ import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
+import com.china.jar.IVoiceCallBackInterface;
+import com.china.jar.IVoiceClientInterface;
+import com.china.jar.StudentInfo;
+import com.china.jar.VoiceChangedListener;
+import com.china.jar.VoiceManager;
+
 public class SimpleService extends Service{
 	private static VoiceClientInterfaceImpl mBinder;
 	@Override
 	public IBinder onBind(Intent intent) {
 		Logger.d();
-		return mBinder;//¸ú¿Í»§¶Ë°ó¶¨
+		return mBinder;//è·Ÿå®¢æˆ·ç«¯ç»‘å®š
 	}
 	
 	@Override
@@ -38,22 +38,23 @@ public class SimpleService extends Service{
 		}
 		return START_STICKY;
 	}
-	//ÊµÏÖAIDLµÄ½Ó¿Ú
+	
+	//å®ç°AIDLçš„æ¥å£
 	private class VoiceClientInterfaceImpl extends IVoiceClientInterface.Stub{
 		protected RemoteCallbackList<IVoiceCallBackInterface> mRemoteCallbackList = 
 				new RemoteCallbackList<IVoiceCallBackInterface>();
 		private SimpleControl control;
 		
 		public VoiceClientInterfaceImpl(){
-			control = new SimpleControl(voiceChangedListener);
+			control = new SimpleControl(voiceChangedListener, SimpleService.this);
 		}
 		
 		@Override
 		public void face() throws RemoteException {
-			Logger.d("face----excute!");//¿Í»§¶Ëµ÷ÓÃface·½·¨Ê±ÕâÀï»áÖ´ĞĞ£¬»á´òÓ¡face----excute!
+			Logger.d("face----excute!");//å®¢æˆ·ç«¯è°ƒç”¨faceæ–¹æ³•æ—¶è¿™é‡Œä¼šæ‰§è¡Œï¼Œä¼šæ‰“å°face----excute!
 		}
 		
-		//×¢²á»Øµ÷
+		//æ³¨å†Œå›è°ƒ
 		@Override
 		public void registerCallBack(IVoiceCallBackInterface arg0)
 				throws RemoteException {
@@ -62,7 +63,7 @@ public class SimpleService extends Service{
 			
 		}
 
-		//×¢Ïú»Øµ÷
+		//æ³¨é”€å›è°ƒ
 		@Override
 		public void unRegisterCallBack(IVoiceCallBackInterface arg0)
 				throws RemoteException {
@@ -70,7 +71,7 @@ public class SimpleService extends Service{
 			mRemoteCallbackList.unregister(arg0);
 		}
 		
-		//µ÷ÓÃ»Øµ÷·½·¨
+		//è°ƒç”¨å›è°ƒæ–¹æ³•
 		private VoiceChangedListener voiceChangedListener = new VoiceChangedListener() {
 		
 			@Override
@@ -94,7 +95,7 @@ public class SimpleService extends Service{
 			
 		}
 	}
-	//³õÊ¼»¯·şÎñ£¬Ö÷ÒªÊÇÏòÏµÍ³×¢²á·şÎñ
+	//åˆå§‹åŒ–æœåŠ¡ï¼Œä¸»è¦æ˜¯å‘ç³»ç»Ÿæ³¨å†ŒæœåŠ¡
 	private void initService(){
 		Logger.d();
 		if (null == mBinder){
@@ -110,4 +111,6 @@ public class SimpleService extends Service{
 			}
 		}
 	}
+	
+	
 }
