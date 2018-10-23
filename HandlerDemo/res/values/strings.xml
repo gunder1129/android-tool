@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HandlerDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="test_add">测试handler跟Thread配合使用</string>
+    <string name="test_add2">测试handler跟HandlerThread配合使用</string>
+
+</resources>
