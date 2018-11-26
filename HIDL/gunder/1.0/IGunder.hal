@@ -1,0 +1,6 @@
+package android.hardware.gunder@1.0;
+
+interface IGunder{
+	helloWorld(string name) generates (string result);
+};
+

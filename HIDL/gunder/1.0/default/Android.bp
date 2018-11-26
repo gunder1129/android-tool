@@ -1,0 +1,35 @@
+cc_library_shared {
+    name: "android.hardware.gunder@1.0-impl",
+    relative_install_path: "hw",
+    proprietary: true,
+    srcs: [
+        "Gunder.cpp",
+    ],
+    shared_libs: [
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "android.hardware.gunder@1.0",
+    ],
+}
+
+cc_binary {
+    name: "android.hardware.gunder@1.0-service",
+    relative_install_path: "hw",
+    proprietary: true,
+    init_rc: ["android.hardware.gunder@1.0-service.rc"],
+    srcs: ["service.cpp"],
+
+    shared_libs: [
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libbase",
+        "libutils",
+        "libhardware",
+        "libhidlbase",
+        "libhidltransport",
+        "android.hardware.gunder@1.0",
+    ],
+
+}

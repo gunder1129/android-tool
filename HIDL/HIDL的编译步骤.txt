@@ -1,0 +1,33 @@
+1. 整一套源码，O或者P的
+2. source build/envset.sh
+3. lunch
+4. make hidl-gen
+5. hidl-gen 查看帮助 
+
+//设置对应包路径，即你创建的路径
+6. PACKAGE=android.hardware.gunder@1.0
+7. LOC=hardware/interfaces/gunder/1.0/default/
+# hidl-gen -o hardware/interfaces/gunder/1.0/default/ -Lc++-impl -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport android.hardware.gunder@1.0
+8. hidl-gen -o $LOC -Lc++-impl -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport $PACKAGE
+9. hidl-gen -o $LOC -Landroidbp-impl -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport $PACKAGE
+10. ./hardware/interfaces/update-makefiles.sh
+11. mmm hardware/interfaces/gunder/1.0
+
+将编译后的文件push到系统，注意文件所在的目录及要push到的目录
+adb root
+adb remount
+adb shell mkdir /data/hidl/
+adb push X:\IMX8_b0beta2\out\target\product\mek_8q\vendor\lib64\hw\android.hardware.gunder@1.0-impl.so  /vendor/lib64/hw
+adb push X:\IMX8_b0beta2\out\target\product\mek_8q\system\lib64\android.hardware.gunder@1.0.so /system/lib64
+adb push X:\IMX8_b0beta2\out\target\product\mek_8q\vendor\bin\hw\gunder_client /vendor/bin/hw
+adb push X:\IMX8_b0beta2\out\target\product\mek_8q\vendor\bin\hw\android.hardware.gunder@1.0-service /vendor/bin/hw
+adb push X:\IMX8_b0beta2\device\fsl\evk_8mq\manifest.xml /vendor
+adb install -r X:\IMX8_b0beta2\out\target\product\mek_8q\system\app\HIDLdemo\HIDLdemo.apk
+
+================================
+单编译时不需要jack编译，需要在Android.mk中添加：LOCAL_JACK_ENABLED := disabled，这样可以编译出Android stuido可以用的class.jar
+include $(CLEAR_VARS)
+LOCAL_JACK_ENABLED := disabled
+放在include $(CLEAR_VARS)后面，防止include $(CLEAR_VARS)会重新初始化。
+
+
