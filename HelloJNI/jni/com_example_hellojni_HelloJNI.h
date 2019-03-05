@@ -15,6 +15,70 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_com_example_hellojni_HelloJNI_sayHello
   (JNIEnv *, jclass, jstring);
 
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    print
+ * Signature: (Ljava/lang/String;)Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_com_example_hellojni_HelloJNI_print
+  (JNIEnv *, jclass, jstring);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    sumArray
+ * Signature: ([I)I
+ */
+JNIEXPORT jint JNICALL Java_com_example_hellojni_HelloJNI_sumArray
+  (JNIEnv *, jclass, jintArray);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    initInt2DArray
+ * Signature: (I)[[I
+ */
+JNIEXPORT jobjectArray JNICALL Java_com_example_hellojni_HelloJNI_initInt2DArray
+  (JNIEnv *, jclass, jint);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    changeNum
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_example_hellojni_HelloJNI_changeNum
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    accessField
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_example_hellojni_HelloJNI_accessField
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    staticAccessField
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_example_hellojni_HelloJNI_staticAccessField
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    nativeMethod
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_example_hellojni_HelloJNI_nativeMethod
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     com_example_hellojni_HelloJNI
+ * Method:    nativeStaticMethod
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_example_hellojni_HelloJNI_nativeStaticMethod
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

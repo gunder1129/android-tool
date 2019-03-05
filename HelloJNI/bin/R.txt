@@ -336,6 +336,7 @@ int string abc_searchview_description_submit 0x7f0a0007
 int string abc_searchview_description_voice 0x7f0a0008
 int string abc_shareactionprovider_share_with 0x7f0a000c
 int string abc_shareactionprovider_share_with_application 0x7f0a000b
+int string action_jni 0x7f0a0010
 int string action_settings 0x7f0a000f
 int string app_name 0x7f0a000d
 int string hello_world 0x7f0a000e
