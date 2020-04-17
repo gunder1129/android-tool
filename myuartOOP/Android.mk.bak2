@@ -16,18 +16,13 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
-	main.cpp \
-	UarInterface.cpp \
-	cobs.cpp \
-	DataFrame.cpp \
-	queue.c \
-	McuController.cpp \
+	thread_main.cpp \
+	SendThread.cpp \
 #LOCAL_LDLIBS    := -llog	
 LOCAL_SHARED_LIBRARIES :=   libutils \
 			  libcutils \
 			  libbase      		           
-LOCAL_MODULE := mcu_main
-
+LOCAL_MODULE := thread_main
 LOCAL_CFLAGS += -Wall
 LOCAL_MODULE_TAGS := eng
 include $(BUILD_EXECUTABLE)
